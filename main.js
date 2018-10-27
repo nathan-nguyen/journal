@@ -12,7 +12,7 @@ app.on('ready', function(){
     mainWindow = new BrowserWindow({});
     // Load html into window
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'),
+        pathname: path.join(__dirname, 'screen/file-manipulation/fileManipulation.html'),
         protocol: 'file:',
         slashes: true
     }));

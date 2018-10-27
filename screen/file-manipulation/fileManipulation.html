@@ -1,0 +1,25 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Daily Journal</title>
+
+</head>
+
+<body>
+    <div class="container" id="form-container">
+        <textarea id="output" class="form-control" placeholder="File Content..." rows="10"></textarea>
+        <input id="content" class="form-control" placeholder="Input text here..."/>
+        <button id="createButton" class="btn btn-success">Create File</button>
+        <button id="openButton" class="btn btn-primary">Open File</button>
+        <button id="updateButton" class="btn btn-default">Update File</button>
+    </div>
+</body>
+
+<script>
+    // You can also require other files to run in this process
+    require('./fileManipulation-render.js')
+</script>
+
+</html>

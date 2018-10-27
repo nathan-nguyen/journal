@@ -2,8 +2,9 @@
 bower_components
 node_modules
 dist
+data
 
 # Files
 *.tgz
 *.log
-
+*.jdat
