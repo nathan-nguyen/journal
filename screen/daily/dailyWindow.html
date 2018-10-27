@@ -1,0 +1,31 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="split left" id="form-container">
+        <div class="fill-parent">
+            <textarea id="content" class="form-control" placeholder="Notes" rows="10"></textarea>
+            <button id="saveButton" class="btn btn-default">Save Notes</button>
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="fill-parent">
+            <h2>Graph</h2>
+            <p>Put graph here!</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    // You can also require other files to run in this process
+    require('./dailyWindow-render.js')
+</script>
+
+</html>

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nathan-nguyen/journal#readme",
   "dependencies": {
-    "electron": "^3.0.6"
+    "electron": "^3.0.6",
+    "electron-reload": "^1.2.5"
   }
 }

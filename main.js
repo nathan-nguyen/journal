@@ -1,6 +1,10 @@
+'use strict';
+
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+
+require('electron-reload')(__dirname);
 
 const {app, BrowserWindow} = electron;
 
@@ -12,8 +16,9 @@ app.on('ready', function(){
     mainWindow = new BrowserWindow({});
     // Load html into window
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'screen/file-manipulation/fileManipulation.html'),
+        pathname: path.join(__dirname, 'screen/daily/dailyWindow.html'),
         protocol: 'file:',
         slashes: true
     }));
+    mainWindow.maximize();
 });
