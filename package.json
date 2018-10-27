@@ -1,0 +1,22 @@
+{
+  "name": "journal",
+  "version": "1.0.0",
+  "description": "Daily Journal",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathan-nguyen/journal.git"
+  },
+  "author": "Nathan NGUYEN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nathan-nguyen/journal/issues"
+  },
+  "homepage": "https://github.com/nathan-nguyen/journal#readme",
+  "dependencies": {
+    "electron": "^3.0.6"
+  }
+}
