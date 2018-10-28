@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('electron').remote;
+const homedir = require('os').homedir();
 var fs = require('fs');
 
 document.getElementById('saveButton').onclick = () => saveData(getDailyFileName());
@@ -12,12 +13,24 @@ loadData();
 
 dateInput.onchange = () => loadData();
 
+document.getElementById('prev-date').onclick = () => {
+    dateInput.stepDown();
+    loadData();
+};
+
+document.getElementById('next-date').onclick = () => {
+    dateInput.stepUp();
+    loadData();
+};
+
 function getDailyFileName() {
     var customDate = new Date(dateInput.value);
-    return './data/' + customDate.getFullYear() + '-' + (customDate.getMonth() + 1) + '-' + customDate.getDate() + '.jdat';
+    return homedir + '/Dropbox/data/' + customDate.getFullYear() + '-' + (customDate.getMonth() + 1) + '-' + customDate.getDate() + '.jdat';
 }
 
 function loadData() {
+    var graphArea = document.getElementById('graph-container');
+    graphArea.innerHTML = '';
     var dailyFileName = getDailyFileName();
     console.log(dailyFileName);
     readFile(dailyFileName);
@@ -31,7 +44,7 @@ function saveData(dailyFileName) {
     }
     fs.writeFile(dailyFileName, content, (err) => {
         if (err) {
-            alert('An error occurred when saving the file!');
+            alert('An error occurred when saving the file: ' + err);
             console.log(err);
             return;
         }
@@ -43,6 +56,7 @@ function saveData(dailyFileName) {
 function readFile(filePath) {
     var textArea = document.getElementById('content');
     textArea.value = "";
+
     fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
             console.log(err);
@@ -54,7 +68,7 @@ function readFile(filePath) {
 }
 
 function parsingFileData(data) {
-    var textArea = document.getElementById('graph-container');
+    var graphArea = document.getElementById('graph-container');
     var lines=filterElement(data.split('\n'));
     var result = '';
     graph=[];
@@ -66,7 +80,7 @@ function parsingFileData(data) {
     });
 
     graph.forEach(node => result += node.id + '-' + node.description + '-' + node.status + '<br>');
-    textArea.innerHTML = result;
+    graphArea.innerHTML = result;
 }
 
 function filterElement(array) {

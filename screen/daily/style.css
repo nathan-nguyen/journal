@@ -15,10 +15,8 @@ body {
 .date-bar {
     height: 5%;
     overflow: hidden;
-
     background: #1abc9c;
     text-align: center;
-
     width: 100%;
     display: table;
 }
@@ -33,8 +31,12 @@ body {
 .date-bar ul li {
     margin-left: auto;
     margin-right: auto;
-    color: white;
     font-size: 20px;
+}
+
+.prev, .next {
+    color: white;
+    cursor: pointer;
 }
 
 #dateInput {
@@ -73,12 +75,13 @@ body {
 /* Add a card effect for articles */
 .card {
     height: 90%;
-    background-color: white;
-    padding: 20px;
-
     display: flex;
     flex-direction: column;
-    border-radius: 25px;
+}
+
+.text-container {
+    padding: 20px;
+    border-radius: 15px;
     border: 2px solid #73AD21;
 }
 
@@ -87,6 +90,8 @@ body {
     height: 100%;
     padding: 10px;
     font-size: 12px;
+    border-radius: 20px;
+    border: 2px solid #73AD21;
 }
 
 .card .btn {
@@ -94,4 +99,8 @@ body {
     font-size: 12px;
     cursor: pointer;
     text-align: center;
+    margin-top: 5px;
+
+    border-radius: 10px;
+    border: 2px solid #73AD21;
 }
