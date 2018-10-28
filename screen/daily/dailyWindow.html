@@ -4,21 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <title>Daily Journal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-    <div class="split left" id="form-container">
-        <div class="fill-parent">
-            <textarea id="content" class="form-control" placeholder="Notes" rows="10"></textarea>
-            <button id="saveButton" class="btn btn-default">Save Notes</button>
-        </div>
+    <div class="date-bar">
+        <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
+            <li><input id="dateInput" type="date"/></li>
+        </ul>
     </div>
-
-    <div class="split right">
-        <div class="fill-parent">
-            <h2>Graph</h2>
-            <p>Put graph here!</p>
+    <div class="row">
+        <div class="left-column" id="form-container">
+            <div class="card">
+                <textarea id="content" class="form-control" placeholder="Notes" rows="10"></textarea>
+                <button id="saveButton" class="btn btn-default">Save Notes</button>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="card">
+                <h2>Graph</h2>
+                <p>Put graph here!</p>
+            </div>
         </div>
     </div>
 </body>

@@ -1,12 +1,22 @@
+'use strict';
+
 const app = require('electron').remote;
 var fs = require('fs');
 
-var today = new Date();
-var dailyFileName = './data/' + today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + '.jdat';
-console.log(dailyFileName);
-
-readFile(dailyFileName);
 document.getElementById('saveButton').onclick = () => saveData();
+
+var dateInput = document.getElementById('dateInput');
+dateInput.valueAsDate = new Date();
+loadData();
+
+dateInput.onchange = () => loadData();
+
+function loadData() {
+    var customDate = new Date(dateInput.value);
+    var dailyFileName = './data/' + customDate.getFullYear() + '-' + (customDate.getMonth() + 1) + '-' + customDate.getDate() + '.jdat';
+    console.log(dailyFileName);
+    readFile(dailyFileName);
+}
 
 function saveData() {
     var content = document.getElementById('content').value;
@@ -25,13 +35,13 @@ function saveData() {
 }
 
 function readFile(filePath) {
+    var textArea = document.getElementById('content');
+    textArea.value = "";
     fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
             console.log(err);
             return;
         }
-
-        var textArea = document.getElementById('content');
         textArea.value = data;
     });
 }

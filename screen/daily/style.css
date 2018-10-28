@@ -1,49 +1,98 @@
-* {
-    box-sizing: border-box;
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+
+body {
+    font-family: Arial;
+    background: #f1f1f1;
+    overflow: hidden;
 }
 
-/* Split the screen in half */
-.split {
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
+.row {
+    overflow: hidden;
+    padding: 10px;
 }
-  
+
+.date-bar {
+    height: 5%;
+    overflow: hidden;
+
+    background: #1abc9c;
+    text-align: center;
+
+    width: 100%;
+    display: table;
+}
+
+.date-bar ul {
+    padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+.date-bar ul li {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20px;
+}
+
+#dateInput {
+    background: none;
+    border: none;
+}
+
+#dateInput::-webkit-inner-spin-button,::-webkit-clear-button {
+    display: none;
+}
+
+.date-bar .prev {
+    float: left;
+}
+
+.date-bar .next {
+    float: right;
+}
+
 /* Control the left side */
-.left {
-    left: 0;
+.left-column {
+    float: left;
     width: 40%;
+    padding-left: 10px;
 }
   
 /* Control the right side */
-.right {
-    right: 0;
+.right-column {
+    float: left;
     width: 60%;
-    padding: 20px;
-    border: solid;
-    border-color: gray;
-    border-width: thin;
+    background-color: #f1f1f1;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.fill-parent {
-    display: block;
-    height: 100%;
+/* Add a card effect for articles */
+.card {
+    height: 90%;
+    background-color: white;
+    padding: 20px;
+
     display: flex;
     flex-direction: column;
-} 
 
-.fill-parent .btn {
-    display: block;
-    padding: 14px 28px;
-    font-size: 12px;
-    cursor: pointer;
-    text-align: center;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
 }
-  
-.fill-parent textarea {
+
+.card textarea {
     resize: none;
     height: 100%;
     padding: 10px;
     font-size: 12px;
+}
+
+.card .btn {
+    display: block;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
 }

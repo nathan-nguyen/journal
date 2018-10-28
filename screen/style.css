@@ -1,0 +1,17 @@
+input #dateInput {
+}
+
+input#dateInput::-webkit-datetime-edit {
+    height: 45px;
+    font-size: 30px;
+}
+
+input#dateInput::-webkit-inner-spin-button,::-webkit-clear-button {
+    display: none;
+}
+
+input#dateInput::-webkit-calendar-picker-indicator {
+    height: 45px;
+    width: 45px;
+    border: solid;
+}
